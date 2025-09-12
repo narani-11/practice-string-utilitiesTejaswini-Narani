@@ -26,21 +26,31 @@ strings or undefined inputs.***/
 
 PART 2: practicing String Utilities
 /*console.log("capitalize the firstletter of the string");*/
-function capitalize(str){
- return str.charAt(0).toUpperCase()+str.slice(1);
+// stringUtils.js
+// Capitalize the first letter of a string
+function capitalize(str) {
+    if (typeof str !== 'string' || str.length === 0) {
+        return '';
+    }
+    return str.charAt(0).toUpperCase() + str.slice(1);
 }
-//console.log(capitalize("viradhya"));
-
-/*console.log("reverse the string");*/
-function reverse(str){
-   return str.split("").reverse().join("");
+// Reverse the characters in a string
+function reverse(str) {
+    if (typeof str !== 'string' || str.length === 0) {
+        return '';
+    }
+    return str.split('').reverse().join('');
 }
-//console.log(reverse("viradhya"));
-
-/*console.log("check whether the string contains the substring");*/
-
-function contains(str,substr){
+// Check if substring exists within string
+function contains(str, substr) {
+    if (typeof str !== 'string' || typeof substr !== 'string') {
+        return false;
+    }
     return str.includes(substr);
 }
-//console.log(contains("launchcode","unchco"));
-module.exports={capitalize,reverse,contains}
+// Export functions
+module.exports = {
+    capitalize,
+    reverse,
+    contains
+};
